@@ -147,12 +147,12 @@ function showTaokeItemById() {
 
 ![](./img/05.png)
 
-成功后如下图所示，下载好了后备用，然后联系作者生成自定义模块。作者邮箱(rocke@feeling.life)，
+成功后如下图所示，下载好了后备用，然后联系作者生成自定义模块。作者邮箱(sin@feeling.life)，
 
 ![](./img/06.png)
 
 
->其他问题请联系作者邮箱(rocke@feeling.life)
+>其他问题请联系作者邮箱(sin@feeling.life)
 
 #**chrome查看log**<div id="chrome查看log"></div>
 
