@@ -1,20 +1,26 @@
 # 阿里百川接入指南
-APICloud平台使用阿里百川的教程
+APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注册阿里妈妈的PID
 
-包含入驻阿里百川，以及注册阿里妈妈的PID
+因为此模块需要用到以下三个东西：
+
+1、阿里妈妈的淘客PID
+
+2、加入淘宝联盟，用于查看收益，并把收益转入支付宝
+
+3、生成SDK，因为打正式包的时候需要
 
 ##**概述**
 
+这很重要！！
 
->准备工作
+测试时候请务必使用默认证书，
 
-1、创建一个APICloud项目，空工程即可，不要添加证书，并引入百川模块，下图chromeDebug是方便调试用，不是必须，使用方法下面会介绍
+测试时候请务必使用默认证书，
 
-![](./img/01.png)
+测试时候请务必使用默认证书，
 
-2、生成APP，点击下载，到本地
+打包也打测试版而不能使用正式版，否则会报签名不一致的错误
 
-![](./img/02.png)
 
 >开发者入驻
 
@@ -22,15 +28,17 @@ APICloud平台使用阿里百川的教程
 
 ![](./img/03.png)
 
+
 >阿里妈妈淘客
 
 1、开通阿里妈妈会员，[http://media.alimama.com/user/limit_status.htm?spm=a219a.7395903.0.0.zr6Ni5](http://media.alimama.com/user/limit_status.htm?spm=a219a.7395903.0.0.zr6Ni5),显示以下界面则说明开通成功
 
 ![](./img/07.png)
 
-2、此时再回来查看证书权限管理[http://my.open.taobao.com/](http://my.open.taobao.com/)
+2、此时再回来查看证书权限管理[http://my.open.taobao.com/](http://my.open.taobao.com/)，是不是已经有了，这个id在调用showTaokeItemById接口的时候需要用到
 
 ![](./img/08.png)
+
 
 >加入淘宝联盟
 
@@ -42,6 +50,7 @@ APICloud平台使用阿里百川的教程
 
 这个和开店一样，所以需要人工审核，审核时间也有点长，一般1-2个工作日
 
+
 >开始开发
 
 1、手机需要安装手机淘宝，这个应该大部分人都有吧
@@ -52,10 +61,63 @@ APICloud平台使用阿里百川的教程
 
 ![](./img/16.png)
 
+4、买个东西看看，
 
->以上是打测试包的时候用的，正式包需要生成SDK拿到安全图片文件yw_1222.jpg，然后联系作者生成自定义模块。作者邮箱(rocke@feeling.life)
+首先，看看这个东西能返现多少钱，[传送门](http://pub.alimama.com/myunion.htm?spm=a219t.7473494.1998155389.3.ocD5gU#!/promo/self/items)
 
-2、生成SDK包，按照以下三个步骤（此步骤目前不是必须）
+我准备买个乐高，网址https://item.taobao.com/item.htm?spm=a219t.7664554.1998457203.254.FDU0Gt&id=38922866272
+
+填入传送门里的网址，看看98块钱，返现4.9，棒棒的
+
+![](./img/22.png)
+
+5、通过接口买了,
+
+```js
+function showTaokeItemById() {
+	var param = {
+		itemid : "522997347023",
+		mmpid : "mm_114019109_0_0"
+	};
+	alibaichuan.showTaokeItemById(param, function(ret, err) {
+		if (ret) {
+			console.log(JSON.stringify(ret));
+		} else {
+			console.log(JSON.stringify(err));
+		}
+	});
+}
+```
+
+这里教个省钱的测试方法，选中购买，到了付款界面退出，然后在去购物车找到这个订单，取消购买，
+
+看看是否能拿到钱了，果然有了，但是是显示订单失效，当然了，你取消了嘛
+
+![](./img/23.png)
+
+给你看看成功的订单，另外，阿里的规则（每月1号结算上周的成功订单返现金额，20号将钱给你，到时候你要吧他提现转到支付宝）
+
+![](./img/24.png)
+
+
+
+[回去继续看APICloud文档](http://docs.apicloud.com/端API/开放SDK/alibaichuan)
+
+以上都是测试时候用到的，需要打正式版本包的时候继续往下看。
+
+
+
+>以上是打测试包的时候用的，正式包需要生成SDK拿到安全图片文件yw_1222.jpg，步骤如下
+
+1、将正式工程添加android证书，并引入百川模块，下图chromeDebug是方便调试用，不是必须，使用方法下面会介绍
+
+![](./img/01.png)
+
+2、生成APP，点击下载，到本地
+
+![](./img/02.png)
+
+3、生成SDK包，按照以下三个步骤（此步骤目前不是必须）
 
 ![](./img/04.png)
 
@@ -63,7 +125,7 @@ APICloud平台使用阿里百川的教程
 
 ![](./img/05.png)
 
-成功后如下图所示，下载好了后备用
+成功后如下图所示，下载好了后备用，然后联系作者生成自定义模块。作者邮箱(rocke@feeling.life)，
 
 ![](./img/06.png)
 
@@ -110,4 +172,4 @@ function openchromelog() {
 
 
 
-[回去继续看APICloud文档](http://docs.apicloud.com/端API/开放SDK/alibaichuan)
+
