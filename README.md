@@ -38,15 +38,17 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 打包也打测试版而不能使用正式版，否则会报签名不一致的错误
 
+<div id="开发者入驻"></div>
 
-#**开发者入驻**<div id="开发者入驻"></div>
+#**开发者入驻**
 
 1、首先需要加入百川，[http://baichuan.taobao.com/](http://baichuan.taobao.com/)，按要求一步一步填写过来，成功后如下图
 
 ![](./img/03.png)
 
+<div id="阿里妈妈淘客"></div>
 
-#**阿里妈妈淘客**<div id="阿里妈妈淘客"></div>
+#**阿里妈妈淘客**
 
 1、开通阿里妈妈会员，[http://media.alimama.com/user/limit_status.htm?spm=a219a.7395903.0.0.zr6Ni5](http://media.alimama.com/user/limit_status.htm?spm=a219a.7395903.0.0.zr6Ni5),显示以下界面则说明开通成功
 
@@ -56,8 +58,9 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/08.png)
 
+<div id="加入淘宝联盟"></div>
 
-#**加入淘宝联盟**<div id="加入淘宝联盟"></div>
+#**加入淘宝联盟**
 
 1、点此加入淘宝联盟[http://pub.alimama.com/?spm=0.0.0.0.CrMksN](http://pub.alimama.com/?spm=0.0.0.0.CrMksN)
 
@@ -67,7 +70,9 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 这个和开店一样，所以需要人工审核，审核时间也有点长，一般1-2个工作日
 
-#**绑定依赖的模块**<div id="bindyilai"></div>
+<div id="bindyilai"></div>
+
+#**绑定依赖的模块**
 
 1、先下载阿里百川的的git压缩包，里面包含自定义模块(Alibaichuan-master.zip\Alibaichuan-master\Custom Module),
 
@@ -91,7 +96,9 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/ytjmk.png)
 
-#**开始开发**<div id="开始开发"></div>
+<div id="开始开发"></div>
+
+#**开始开发**
 
 1、手机需要安装手机淘宝，这个应该大部分人都有吧
 
@@ -151,8 +158,9 @@ function showTaokeItemById() {
 
 以上都是测试时候用到的，需要打正式版本包的时候继续往下看。
 
+<div id="打正式包"></div>
 
-#**打正式包**<div id="打正式包"></div>
+#**打正式包**
 
 >以上是打测试包的时候用的，正式包需要生成SDK拿到安全图片文件yw_1222.jpg，步骤如下
 
@@ -179,7 +187,9 @@ function showTaokeItemById() {
 
 >其他问题请联系作者邮箱(sin@feeling.life)
 
-#**chrome查看log**<div id="chrome查看log"></div>
+<div id="chrome查看log"></div>
+
+#**chrome查看log**
 
 1、打开chrome，输入chrome://inspect/#devices，就能看到制作的网页
 
