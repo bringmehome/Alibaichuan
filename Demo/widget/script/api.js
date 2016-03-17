@@ -289,9 +289,9 @@
             el.classList.toggle(cls);
         }else{
             if(u.hasCls(el, cls)){
-                u.removeCls(el, cls);
-            }else{
                 u.addCls(el, cls);
+            }else{
+                u.removeCls(el, cls);
             }
         }
         return el;
