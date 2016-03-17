@@ -11,17 +11,18 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 >指南目录
 
-* [开发者入驻](#开发者入驻)
-
-* [阿里妈妈淘客](#阿里妈妈淘客)
-
-* [加入淘宝联盟](#加入淘宝联盟)
 
 * [绑定依赖的模块](#bindyilai)
 
 * [开始开发](#开始开发)
 
 * [打正式包](#打正式包)
+
+* [开发者入驻](#开发者入驻)
+
+* [阿里妈妈淘客](#阿里妈妈淘客)
+
+* [加入淘宝联盟](#加入淘宝联盟)
 
 * [chrome查看log](#chrome查看log)
 
@@ -37,8 +38,6 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 测试时候请务必使用默认证书，
 
 打包也打测试版而不能使用正式版，否则会报签名不一致的错误
-
-
 
 
 <div id="bindyilai"></div>
@@ -131,7 +130,10 @@ function showTaokeItemById() {
 
 #**打正式包**
 
->以上是打测试包的时候用的，正式包需要生成SDK拿到安全图片文件yw_1222.jpg，步骤如下
+打正式包之前需要先[入驻阿里](#开发者入驻)，加入[淘宝联盟](#加入淘宝联盟)，并得到[阿里妈妈的pid](#阿里妈妈淘客)
+
+
+>然后继续
 
 1、将正式工程添加android证书，并引入百川模块，下图chromeDebug是方便调试用，不是必须，使用方法下面会介绍
 
@@ -166,9 +168,44 @@ function showTaokeItemById() {
 
 >其他问题请联系作者邮箱(sin@feeling.life)
 
+
+<div id="开发者入驻"></div>
+
+#**开发者入驻**
+
+1、首先需要加入百川，[http://baichuan.taobao.com/](http://baichuan.taobao.com/)，按要求一步一步填写过来，成功后如下图
+
+![](./img/03.png)
+
+<div id="阿里妈妈淘客"></div>
+
+#**阿里妈妈淘客**
+
+1、开通阿里妈妈会员，[http://media.alimama.com/user/limit_status.htm?spm=a219a.7395903.0.0.zr6Ni5](http://media.alimama.com/user/limit_status.htm?spm=a219a.7395903.0.0.zr6Ni5),显示以下界面则说明开通成功
+
+![](./img/07.png)
+
+2、此时再回来查看证书权限管理[http://my.open.taobao.com/](http://my.open.taobao.com/)，是不是已经有了，这个id在调用[showTaokeItemById接口](http://docs.apicloud.com/%E7%AB%AFAPI/%E5%BC%80%E6%94%BESDK/alibaichuan#6)的时候需要用到
+
+![](./img/08.png)
+
+<div id="加入淘宝联盟"></div>
+
+#**加入淘宝联盟**
+
+1、点此加入淘宝联盟[http://pub.alimama.com/?spm=0.0.0.0.CrMksN](http://pub.alimama.com/?spm=0.0.0.0.CrMksN)
+
+![](./img/09.png)
+
+![](./img/10.png)
+
+这个和开店一样，所以需要人工审核，审核时间也有点长，一般1-2个工作日
+
+
+
 <div id="chrome查看log"></div>
 
-#**chrome查看log**
+#**附录：chrome查看log**
 
 1、打开chrome，输入chrome://inspect/#devices，就能看到制作的网页
 
