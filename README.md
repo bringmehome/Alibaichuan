@@ -69,9 +69,10 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 这个和开店一样，所以需要人工审核，审核时间也有点长，一般1-2个工作日
 
+
 <div id="bindyilai"></div>
 
-#**绑定依赖的模块**
+#**绑定依赖的模块**<div id="bindyilai"></div>
 
 首先需要确定，你现在是否已经生成了Android的证书，[前去查看](http://www.apicloud.com/certificate)，下图所示则说明没有生成证书
 
