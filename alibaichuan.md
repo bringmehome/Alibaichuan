@@ -24,6 +24,21 @@
 
 >使用须知
 
+V1.0.1
+
+更新时间：2016-03-17
+
+更新日志：
+
+1、添加了初始化的接口initTaeSDK
+
+2、将模块与安全图片分离，使用时候需要添加模块，并去[https://github.com/bringmehome/Alibaichuan](https://github.com/bringmehome/Alibaichuan)下载Custom Module模块，导入到自定义模块，两个模块配合使用（打包时候仍然是测试版）
+
+3、使用步骤参考[接入指南](https://github.com/bringmehome/Alibaichuan/#bindyilai)
+
+
+V1.0.0
+
 >>1. 使用前需要去阿里百川注册并关联阿里妈妈，获取阿里妈妈淘客PID, [传送门](http://baichuan.taobao.com), 流程请参考[接入指南](https://github.com/bringmehome/Alibaichuan)
 
 >>2. 不同的账号注册会生成不同的SDK，并得到不一样的 __"安全图片文件yw_1222.jpg"__ ，所以此版本为测试版本，在APICloud创建项目时候使用默认证书，生成apk时候也请选择测试版。
@@ -31,8 +46,6 @@
 >>3. 打包成正式版本时候，如果因为各种原因无法调用手淘的授权登录页，请联系作者邮箱（rocke@feeling.life）,作者会在第一时间回复。
 
 >>4. 此版本实现了阿里百川的基础功能：手淘授权登陆、退出登陆、获取登录者的信息、打开购物车、打开我的订单、通过itemid打开宝贝详情、通过openid打开宝贝详情。
-
->>5. 如有特殊需求，请联系作者邮箱。
 
 
 #**initTaeSDK**<div id="initTaeSDK"></div>
