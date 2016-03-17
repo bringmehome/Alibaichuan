@@ -79,7 +79,7 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/thyw1222.png)
 
-3、重新压缩自定义模块，直接在myqupai文件夹上点击压缩
+3、重新压缩自定义模块，直接在commonkey文件夹上点击压缩
 
 ![](./img/yasuokey.png)
 
@@ -95,7 +95,7 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 1、手机需要安装手机淘宝，这个应该大部分人都有吧
 
-2、接口使用参考github：[https://github.com/bringmehome/Alibaichuan](https://github.com/bringmehome/Alibaichuan),里面的测试demo
+2、接口使用参考github：[https://github.com/bringmehome/Alibaichuan](https://github.com/bringmehome/Alibaichuan/tree/master/Demo/widget),里面的测试demo
 
 3、测试登录
 
