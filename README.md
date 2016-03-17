@@ -58,9 +58,8 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/08.png)
 
-<div id="加入淘宝联盟"></div>
 
-#**加入淘宝联盟**
+#**加入淘宝联盟**<div id="加入淘宝联盟"></div>
 
 1、点此加入淘宝联盟[http://pub.alimama.com/?spm=0.0.0.0.CrMksN](http://pub.alimama.com/?spm=0.0.0.0.CrMksN)
 
@@ -74,15 +73,23 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 #**绑定依赖的模块**
 
-1、先下载阿里百川的的git压缩包，里面包含自定义模块(Alibaichuan-master.zip\Alibaichuan-master\Custom Module),
+首先需要确定，你现在是否已经生成了Android的证书，[前去查看](http://www.apicloud.com/certificate)，下图所示则说明没有生成证书
+
+![](./img/zs.jpg)
+
+1. 如果没有，那么你可以直接下载自定义模块(myqupai.zip), 添加到自定义模块中，调用接口进行测试，打APK包的时候选择测试版
+
+2. 如果已经生成了证书，那么请看[打正式包](#打正式包), 如果没有，继续往下看
+
+3、先下载阿里百川的的git压缩包，里面包含自定义模块(Alibaichuan-master.zip\Alibaichuan-master\Custom Module),
 
 ![](./img/xzwiki.png)
 
-2、上传自定义模块，
+4、上传自定义模块，
 
 ![](./img/sczdy.png)
 
-3、并勾选自定义模块，能在已添加模块中看到即可
+5、并勾选自定义模块，能在已添加模块中看到即可
 
 ![](./img/ytjmk.png)
 
