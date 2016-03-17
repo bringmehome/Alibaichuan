@@ -78,21 +78,11 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/xzwiki.png)
 
-2、解压自定义模块，用[打正式包](#打正式包)中获取的SDK，解压后得到安全图片 yw_1222.jpg，替换此模块中的安全图片
-
-![](./img/yw12222.png)
-
-![](./img/thyw1222.png)
-
-3、重新压缩自定义模块，直接在commonkey文件夹上点击压缩
-
-![](./img/yasuokey.png)
-
-4、上传自定义模块，
+2、上传自定义模块，
 
 ![](./img/sczdy.png)
 
-5、并勾选自定义模块，能在已添加模块中看到即可
+3、并勾选自定义模块，能在已添加模块中看到即可
 
 ![](./img/ytjmk.png)
 
@@ -183,6 +173,16 @@ function showTaokeItemById() {
 成功后如下图所示，下载好了后备用，然后联系作者生成自定义模块。作者邮箱(sin@feeling.life)，
 
 ![](./img/06.png)
+
+从中获取的SDK，解压后得到安全图片 yw_1222.jpg，替换commonkey模块中的安全图片[commonkey模块](https://github.com/bringmehome/Alibaichuan/#bindyilai)
+
+![](./img/yw12222.png)
+
+![](./img/thyw1222.png)
+
+重新压缩自定义模块，直接在commonkey文件夹上点击压缩,并上传到自定义模块
+
+![](./img/yasuokey.png)
 
 
 >其他问题请联系作者邮箱(sin@feeling.life)
