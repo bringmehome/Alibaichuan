@@ -96,9 +96,6 @@
         </div>
     </div>
     <div class="main">
-        <div class="button4" onclick="openScanner()">
-            打开二维码
-        </div>
         <div class="button3" onclick="showTaokeItemById()">
             打开宝贝ItemID
         </div>
@@ -122,43 +119,6 @@ apiready = function() {
 
 function initSDK() {
     alibaichuan.initTaeSDK(function(ret, err) {
-        if (ret) {
-            setinnerHTML(JSON.stringify(ret));
-        } else {
-            setinnerHTML(JSON.stringify(err));
-        }
-    });
-}
-
-//			打开扫描二维码
-function openScanner() {
-    var obj = api.require('scanner');
-    obj.open(function(ret, err) {
-        if (ret) {
-            var message = ret.msg;
-            var msgArr = message.split("&");
-            var itemid, temp, first, orfirst;
-            for (var i = 0; i < msgArr.length; i++) {
-                temp = "-" + msgArr[i];
-                first = temp.indexOf("-id=");
-                orfirst = temp.indexOf("?id=");
-                if (first > -1) {
-                    itemid = temp.substr(first + 4, temp.length - first - 4);
-                } else if (orfirst > -1) {
-                    itemid = temp.substr(orfirst + 4, temp.length - orfirst - 4);
-                }
-            }
-            autoOpenItemById(itemid);
-        }
-    });
-}
-
-function autoOpenItemById(itemid) {
-    var param = {
-        itemid: itemid,
-        mmpid: "mm_14421418_0_0"
-    };
-    alibaichuan.showTaokeItemById(param, function(ret, err) {
         if (ret) {
             setinnerHTML(JSON.stringify(ret));
         } else {
