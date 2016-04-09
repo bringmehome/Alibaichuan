@@ -1,4 +1,10 @@
 # 阿里百川接入指南
+
+首先是效果演示，如果能满足要求，您请继续往下看
+
+![](./img/xgys.jpg)
+
+
 APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注册阿里妈妈的PID
 
 因为此模块需要用到以下三个东西：
@@ -48,7 +54,7 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/zs.jpg)
 
-1. 如果没有，那么你可以直接下载自定义模块(myqupai.zip), 添加到自定义模块中，调用接口进行测试，打APK包的时候选择测试版
+1. 如果没有，那么你可以直接下载自定义模块(androidkey.zip, iOSkey.zip), 添加到自定义模块中，调用接口进行测试，打APK包的时候选择测试版
 
 2. 如果已经生成了证书，那么请看[打正式包](#打正式包), 如果没有，继续往下看
 
@@ -71,6 +77,15 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 1、手机需要安装手机淘宝，这个应该大部分人都有吧
 
 2、接口使用参考github：[https://github.com/bringmehome/Alibaichuan](https://github.com/bringmehome/Alibaichuan/tree/master/Demo/widget),里面的测试demo
+
+注意要在config.xml文件里添加这一句" < preference name="urlScheme" value="tbopen23277247"/ > ",其中tbopen23277247是tbopen+appkey, appkey是在阿里百川的平台上可以找到
+
+![](./img/tbopenkey.png)
+
+效果
+
+![](./img/tbopenkey01.png)
+
 
 3、测试登录
 
