@@ -170,7 +170,9 @@ function showTaokeItemById() {
 
 ![](./img/06.png)
 
-从中获取的SDK，解压后得到安全图片 yw_1222.jpg，替换commonkey模块中的安全图片[commonkey模块](https://github.com/bringmehome/Alibaichuan/#bindyilai)
+从中获取的SDK，解压后得到安全图片 yw_1222.jpg，替换Custom Module模块中zip包里的安全图片[Custom Module](https://github.com/bringmehome/Alibaichuan/tree/master/Custom%20Module)
+
+android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版本替换target目录下的文件
 
 ![](./img/yw12222.png)
 
