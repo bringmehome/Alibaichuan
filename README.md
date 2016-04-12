@@ -162,7 +162,7 @@ function showTaokeItemById() {
 
 ![](./img/05.png)
 
-成功后如下图所示，下载好了后备用，然后联系作者生成自定义模块。作者邮箱(sin@feeling.life)，
+成功后如下图所示
 
 ![](./img/06.png)
 
