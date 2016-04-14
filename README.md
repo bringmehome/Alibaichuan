@@ -61,6 +61,10 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 4、上传自定义模块，**iOS版本自定义loader和云端打包使用的key模块不一样哦**
 
+**iOS开发-->很重要：** alibaichuan的模块不变，安全图片的模块分两个:云编译时候用：commonkey.zip,   自定义loader时候用：aliloaderkey.zip, 不能全部勾选，得单独勾选。
+
+**android开发** alibaichuan的模块不变，安全图片的模块用：commonkey.zip, 云打包和自定义模块都用这个。
+
 ![](./img/sczdy.png)
 
 5、并勾选自定义模块，能在已添加模块中看到即可
