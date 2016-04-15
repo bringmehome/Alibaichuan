@@ -87,6 +87,12 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/tbopenkey01.png)
 
+```js
+  <feature name="alibaichuan">
+    <param name="urlScheme" value="tbopen23277247"/>
+  </feature>
+```
+
 
 3、测试登录
 
