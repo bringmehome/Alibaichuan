@@ -61,7 +61,11 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/xzwiki.png)
 
-4、上传自定义模块，
+4、上传自定义模块，**iOS版本自定义loader和云端打包使用的key模块不一样哦**
+
+**iOS开发-->很重要：** alibaichuan的模块不变，安全图片的模块分两个:云编译时候用：commonkey.zip,   自定义loader时候用：aliloaderkey.zip, 不能全部勾选，得单独勾选。
+
+**android开发** alibaichuan的模块不变，安全图片的模块用：commonkey.zip, 云打包和自定义模块都用这个。
 
 ![](./img/sczdy.png)
 
@@ -84,6 +88,12 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 效果
 
 ![](./img/tbopenkey01.png)
+
+```js
+  <feature name="alibaichuan">
+    <param name="urlScheme" value="tbopen23277247"/>
+  </feature>
+```
 
 
 3、测试登录
@@ -215,3 +225,7 @@ android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版�
 ![](./img/10.png)
 
 这个和开店一样，所以需要人工审核，审核时间也有点长，一般1-2个工作日
+
+(完)
+
+如果看到这里，你已经疯了，请联系QQ：88635653，备注：求药，治百川模块
