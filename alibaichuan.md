@@ -14,9 +14,9 @@
 
 * [showTaokeItemById](#6)
 
-* [showDetailByURL](#7)
+* [showTaokeItemByOpenId](#7)
 
-* [showTaokeItemByOpenId](#8)
+* [showDetailByURL](#8)
 
 * [错误码](#9)
 
@@ -97,8 +97,8 @@ function initSDK() {
 
     可提供的1.0.2及更高版本
 
-
-#**showLogin**<div id="1"></div>
+<div id="1"></div>
+#**showLogin**
 
     打开手淘授权登陆
 
@@ -160,8 +160,8 @@ alibaichuan.showLogin(function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**getUserInfo**<div id="2"></div>
+<div id="2"></div>
+#**getUserInfo**
 
     获取已经登陆的用户的相关信息
 
@@ -223,8 +223,8 @@ alibaichuan.getUserInfo(function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**logout**<div id="3"></div>
+<div id="3"></div>
+#**logout**
 
     退出登陆
 
@@ -281,8 +281,8 @@ alibaichuan.logout(function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**openMyCart**<div id="4"></div>
+<div id="4"></div>
+#**openMyCart**
 
     打开我的购物车
 
@@ -339,8 +339,8 @@ alibaichuan.openMyCart(function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**myOrdersPage**<div id="5"></div>
+<div id="5"></div>
+#**myOrdersPage**
 
     打开我的订单
 
@@ -397,8 +397,8 @@ alibaichuan.myOrdersPage(function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**showTaokeItemById**<div id="6"></div>
+<div id="6"></div>
+#**showTaokeItemById**
 
     通过itemid打开宝贝
 
@@ -474,8 +474,8 @@ alibaichuan.showTaokeItemById(param, function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**showTaokeItemByOpenId**<div id="7"></div>
+<div id="7"></div>
+#**showTaokeItemByOpenId**
 
     打开我的订单
 
@@ -551,8 +551,8 @@ alibaichuan.showTaokeItemByOpenId(param, function(ret, err) {
 
     可提供的1.0.0及更高版本
 
-
-#**showDetailByURL**<div id="8"></div>
+<div id="8"></div>
+#**showDetailByURL**
 
     通过URL打开宝贝详情
 
@@ -560,7 +560,7 @@ alibaichuan.showTaokeItemByOpenId(param, function(ret, err) {
 
 ##params
 
-utl：
+url：
 
 - 类型：字符串
 - 默认值：无
@@ -628,8 +628,8 @@ alibaichuan.showDetailByURL(param, function(ret, err) {
 
     可提供的1.0.3及更高版本
 
-
-#**错误码**<div id="9"></div>
+<div id="9"></div>
+#**错误码**
 
 1. 0        请求成功
 
