@@ -2,7 +2,9 @@
 
 首先是效果演示，如果能满足要求，您请继续往下看
 
-![](./img/xgys.png)
+![](./img/androidcs.png)
+
+![](./img/iOScs.png)
 
 
 APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注册阿里妈妈的PID

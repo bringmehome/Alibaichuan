@@ -14,38 +14,23 @@
 
 * [showTaokeItemById](#6)
 
-* [showTaokeItemByOpenId](#7)
+* [showDetailByURL](#7)
 
-* [错误码](#8)
+* [showTaokeItemByOpenId](#8)
+
+* [错误码](#9)
 
 ##**概述**
 
-百川是阿里巴巴旗下的无线开放平台，基于世界级的后端服务和成熟的商业组件，快速搭建App和提供卓越用户体验，开拓广告、商品、生活服务等无线新商业。
+百川是阿里巴巴旗下的无线开放平台，基于世界级的后端服务和成熟的商业组件，快速搭建App和提供卓越用户体验，开拓广告、商品、生活服务等无线新商业。此版本实现了阿里百川的基础功能：手淘授权登陆、退出登陆、获取登录者的信息、打开购物车、打开我的订单、通过itemid打开宝贝详情等
 
 >使用须知
 
-V1.0.1
+1、此模块依賴安全图片模块，安全圖片是阿里的一種身份認證機制，每個證書(或者bundle:iOS包名)對應一個安全圖片，測試時候我們均使用平臺默認的證書，打包时選擇测试版
 
-更新时间：2016-03-17
-
-更新日志：
-
-1、添加了初始化的接口initTaeSDK
-
-2、将模块与安全图片分离，使用时候需要添加模块，并去[https://github.com/bringmehome/Alibaichuan](https://github.com/bringmehome/Alibaichuan)下载Custom Module模块，导入到自定义模块，两个模块配合使用（打包时候仍然是测试版）
+2、首先，去[GITHUB](https://github.com/bringmehome/Alibaichuan/tree/master/Custom%20Module)下载Custom Module模块，导入到自定义模块，(android和iOS兩個<而且iOS的雲編譯和自定義loader所用的還不一樣>)
 
 3、使用步骤参考[接入指南](https://github.com/bringmehome/Alibaichuan/#bindyilai)
-
-
-V1.0.0
-
->>1. 使用前需要去阿里百川注册并关联阿里妈妈，获取阿里妈妈淘客PID, [传送门](http://baichuan.taobao.com), 流程请参考[接入指南](https://github.com/bringmehome/Alibaichuan)
-
->>2. 不同的账号注册会生成不同的SDK，并得到不一样的 __"安全图片文件yw_1222.jpg"__ ，所以此版本为测试版本，在APICloud创建项目时候使用默认证书，生成apk时候也请选择测试版。
-
->>3. 打包成正式版本时候，如果因为各种原因无法调用手淘的授权登录页，请联系作者邮箱（rocke@feeling.life）,作者会在第一时间回复。
-
->>4. 此版本实现了阿里百川的基础功能：手淘授权登陆、退出登陆、获取登录者的信息、打开购物车、打开我的订单、通过itemid打开宝贝详情、通过openid打开宝贝详情。
 
 
 #**initTaeSDK**<div id="initTaeSDK"></div>
@@ -108,9 +93,9 @@ function initSDK() {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
-    可提供的1.0.0及更高版本
+    可提供的1.0.2及更高版本
 
 
 #**showLogin**<div id="1"></div>
@@ -171,7 +156,7 @@ alibaichuan.showLogin(function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
@@ -234,7 +219,7 @@ alibaichuan.getUserInfo(function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
@@ -292,7 +277,7 @@ alibaichuan.logout(function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
@@ -350,7 +335,7 @@ alibaichuan.openMyCart(function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
@@ -408,7 +393,7 @@ alibaichuan.myOrdersPage(function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
@@ -485,7 +470,7 @@ alibaichuan.showTaokeItemById(param, function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
@@ -562,12 +547,89 @@ alibaichuan.showTaokeItemByOpenId(param, function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统, iOS系統
 
     可提供的1.0.0及更高版本
 
 
-#**错误码**<div id="8"></div>
+#**showDetailByURL**<div id="8"></div>
+
+    通过URL打开宝贝详情
+
+    showDetailByURL({params}, function(ret, err))
+
+##params
+
+utl：
+
+- 类型：字符串
+- 默认值：无
+- 描述：商品URL地址
+
+mmpid：
+
+- 类型：字符串
+- 默认值：无
+- 描述：阿里妈妈的pid，如果你还没有开通 [阿里妈妈-淘宝联盟账号](http://media.alimama.com/user/limit_status.htm?spm=0.0.0.0.yoiYny)，要去阿里妈妈开通账号并且补全账号信息以及绑定支付宝, 因为分销的商品最后是返回到阿里妈妈的账号，并通过支付宝提现拿到的
+
+
+##callback(ret,err)
+
+ret：
+
+- 类型：JSON对象
+
+内部字段：
+
+```js
+{
+    code : 0              //正确码
+    message:"success"     //描述
+}
+```
+
+err：
+
+- 类型：JSON对象
+
+内部字段：
+
+```js
+{
+    code : 90001                    //错误码
+    message:"Parameter is null"     //错误描述
+}
+```
+
+##示例代码
+
+```js
+var alibaichuan = api.require('alibaichuan');
+var param = {
+    url : "https://detail.tmall.com/item.htm?id=528887107325",
+    mmpid : "mm_14421418_0_0"
+};
+alibaichuan.showDetailByURL(param, function(ret, err) {
+    if (ret) {
+        setinnerHTML(JSON.stringify(ret));
+    } else {
+        setinnerHTML(JSON.stringify(err));
+    }
+});
+```
+
+##补充说明
+
+    无
+
+##可用性
+
+    Android系统
+
+    可提供的1.0.3及更高版本
+
+
+#**错误码**<div id="9"></div>
 
 1. 0        请求成功
 
