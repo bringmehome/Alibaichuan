@@ -67,7 +67,7 @@
 			<div class="button1" onclick="initSDK()">
 				初始化
 			</div>
-			<div class="button1" onclick="getAliOpen()">
+			<div class="button1" onclick="login()">
 				授权登录
 			</div>
 			<div class="button1" onclick="logout()">
@@ -89,6 +89,9 @@
 			<div class="button3" onclick="showTaokeItemById()">
 				打开宝贝ItemID
 			</div>
+			<div class="button2" onclick="showTaokeItemByOpenId()">
+				打开宝贝OpenID
+			</div>
 			<div class="button4" onclick="showDetailByURL()">
 				打开宝贝URL
 			</div>
@@ -107,11 +110,14 @@
 		};
 		function requireali() {
 			alibaichuan = api.require('alibaichuan');
+			initSDK();
 		}
 
 		function initSDK() {
-			alert(alibaichuan);
-			alibaichuan.initTaeSDK(function(ret, err) {
+			var param = {
+				isvcode : "feelinglife"
+			};
+			alibaichuan.initTaeSDK(param, function(ret, err) {
 				if (ret) {
 					setinnerHTML(JSON.stringify(ret));
 				} else {
@@ -120,7 +126,7 @@
 			});
 		}
 
-		function getAliOpen() {
+		function login() {
 			alibaichuan.showLogin(function(ret, err) {
 				if (ret) {
 					document.getElementById("mayicon").src = ret.avatarUrl;
@@ -135,7 +141,6 @@
 		function getUserInfo() {
 			alibaichuan.getUserInfo(function(ret, err) {
 				if (ret) {
-					////console.log("用户信息 ret - " + JSON.stringify(ret));
 					document.getElementById("mayicon").src = ret.avatarUrl;
 					var innerText = "昵称：" + ret.userNick + "<br/>授权码：" + ret.authCode + "<br/>时间：" + ret.loginTime + "<br/>用户ID：" + ret.userId;
 					setinnerHTML(innerText);
@@ -156,7 +161,10 @@
 		}
 
 		function openMyCart() {
-			alibaichuan.openMyCart(function(ret, err) {
+			var param = {
+				isvcode : "feelinglife"
+			};
+			alibaichuan.openMyCart(param, function(ret, err) {
 				if (ret) {
 					setinnerHTML(JSON.stringify(ret));
 				} else {
@@ -177,6 +185,7 @@
 
 		function showTaokeItemById() {
 			var param = {
+			    isvcode : "feelinglife",
 				itemid : "530187984567",
 				mmpid : "mm_14421418_0_0"
 			};
@@ -188,11 +197,41 @@
 				}
 			});
 		}
+		
+		////此接口和下面的接口效果一样
+//		function showTaokeItemByOpenId(){
+//			var param = {
+//			    isvcode : "feelinglife",
+//			    itemid : "AAGMLk9FACJvEVXfLXXUtbjt",
+//			    mmpid : "mm_14421418_0_0"
+//			};
+//			alibaichuan.showTaokeItemById(param, function(ret, err) {
+//				if (ret) {
+//					setinnerHTML(JSON.stringify(ret));
+//				} else {
+//					setinnerHTML(JSON.stringify(err));
+//				}
+//			});
+//		}
+		
+		function showTaokeItemByOpenId() {
+			var param = {
+				openid : "AAGMLk9FACJvEVXfLXXUtbjt",
+				mmpid : "mm_14421418_0_0"
+			};
+			alibaichuan.showTaokeItemByOpenId(param, function(ret, err) {
+				if (ret) {
+					setinnerHTML(JSON.stringify(ret));
+				} else {
+					setinnerHTML(JSON.stringify(err));
+				}
+			});
+		}
 
 		function showDetailByURL() {
 			var param = {
-				url : "https://detail.tmall.com/item.htm?spm=a220o.1000855.1998025129.2.0GCnkE&id=528887107325&pvid=e1fafc63-fd89-4d8b-bec1-53dff12ca7e1&abbucket=_AB-M32_B12&acm=03054.1003.1.587829&aldid=dVZ5IOUG&abtest=_AB-LR32-PR32&scm=1007.12559.23637.100200300000000&pos=2&sku_properties=20509:28383",
-				mmpid : "mm_114019109_0_0"
+				url : "https://detail.tmall.com/item.htm?id=528887107325",
+				mmpid : "mm_14421418_0_0"
 			};
 			alibaichuan.showDetailByURL(param, function(ret, err) {
 				if (ret) {

@@ -37,7 +37,15 @@
 
     初始化模块信息，打开页面require完成就去执行
 
-    initTaeSDK(function(ret, err))
+    initTaeSDK(param, function(ret, err))
+
+##params
+
+isvcode：
+
+- 类型：字符串
+- 默认值：无
+- 描述：自定义ISVCode,用于服务器订单跟踪。(如果服务器不做处理，可以随便传)
 
 ##callback(ret,err)
 
@@ -75,9 +83,11 @@ apiready = function() {
     alibaichuan = api.require('alibaichuan');
     initSDK();
 };
-
+var param = {
+    isvcode : "feelinglife"
+};
 function initSDK() {
-    alibaichuan.initTaeSDK(function(ret, err) {
+    alibaichuan.initTaeSDK(param,function(ret, err) {
         if (ret) {
             alert(JSON.stringify(ret));
         } else {
@@ -286,7 +296,15 @@ alibaichuan.logout(function(ret, err) {
 
     打开我的购物车
 
-    openMyCart(function(ret, err))
+    openMyCart(param, function(ret, err))
+
+##params
+
+isvcode：
+
+- 类型：字符串
+- 默认值：无
+- 描述：自定义ISVCode,用于服务器订单跟踪。(如果服务器不做处理，可以随便传)
 
 ##callback(ret,err)
 
@@ -320,7 +338,10 @@ err：
 
 ```js
 var alibaichuan = api.require('alibaichuan');
-alibaichuan.openMyCart(function(ret, err) {
+var param = {
+    isvcode : "feelinglife"
+};
+alibaichuan.openMyCart(param, function(ret, err) {
     if (ret) {
         alert("ret - " + JSON.stringify(ret));
     } else {
@@ -406,11 +427,19 @@ alibaichuan.myOrdersPage(function(ret, err) {
 
 ##params
 
+isvcode：
+
+- 类型：字符串
+- 默认值：无
+- 描述：自定义ISVCode,用于服务器订单跟踪。(如果服务器不做处理，可以随便传)
+
 itemid：
 
 - 类型：字符串
 - 默认值：无
 - 描述：宝贝的id，itemid为打开宝贝详情后，看到浏览器里有id一项，如"https://item.taobao.com/item.htm?id=45535180986",这里的id就是itemid
+
+- 注：商品id.支持标准的商品id，eg.37196464781；同时支持openItemId，eg.AAHd5d-HAAeGwJedwSnHktBI；必填，不允许为null；
 
 mmpid：
 
@@ -452,7 +481,8 @@ err：
 ```js
 var alibaichuan = api.require('alibaichuan');
 var param = {
-    itemid : "522997347023",
+    isvcode : "feelinglife",
+    itemid : "522997347023", //或openid:AAHd5d-HAAeGwJedwSnHktBI
     mmpid : "mm_14421418_0_0"
 };
 alibaichuan.showTaokeItemById(param, function(ret, err) {
@@ -476,6 +506,8 @@ alibaichuan.showTaokeItemById(param, function(ret, err) {
 
 <div id="7"></div>
 #**showTaokeItemByOpenId**
+
+    1.0.5之后此接口可以用showTaokeItemById接口代替
 
     打开我的订单
 
@@ -624,7 +656,7 @@ alibaichuan.showDetailByURL(param, function(ret, err) {
 
 ##可用性
 
-    Android系统
+    Android系统，iOS系统
 
     可提供的1.0.3及更高版本
 
