@@ -3,7 +3,7 @@
 <widget id="A6915017700374" version="0.0.1"> 
   <name>SinsAli</name>  
   <description/>  
-  <author email="bringmehome@vip.qq.com" href="http://www.apicloud.com">Rocke</author>  
+  <author email="sin@feeling.life" href="http://www.apicloud.com">Sin</author>  
   <content src="index.html"/>  
   <preference name="pageBounce" value="false"/>  
   <preference name="appBackground" value="rgba(0,0,0,0.0)"/>  
