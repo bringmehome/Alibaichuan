@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <style>
+    #con {
+        margin: 10px;
+        font-size: 24px;
+    }
+    ul {
+        margin-bottom: 10px;
+    }
+    
+    ul li {
+        margin: 5px 10px;
+        padding: 5px;
+        color: #000;
+        word-wrap: break-word;
+    }
+    </style>
+</head>
+
+<body>
+    <label id="con">Hello APP</label>
+    <div onclick="showLogin()">showLogin</div>
+    <br><div onclick="getUserInfo()">getUserInfo</div>
+    <br><div onclick="logout()">logout</div>
+    <br><div onclick="openMyCart()">openMyCart</div>
+    <br><div onclick="myOrdersPage()">myOrdersPage</div>
+    <br><div onclick="showTaokeItemById()">showTaokeItemById</div>
+    <br><div onclick="showTaokeItemById_Openid()">showTaokeItemById_Openid</div>
+    <br><div onclick="showTaokeItemByOpenId()">showTaokeItemByOpenId</div>
+    <br><div onclick="showDetailByURL()">showDetailByURL</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+var alibaichuan;
+apiready = function() {
+    alibaichuan = api.require('alibaichuan');
+    var param = {
+        isvcode: "buyhezi"
+    };
+    alibaichuan.initTaeSDK(param, function(ret, err) {
+        if (ret) {
+            alert(JSON.stringify(ret));
+        } else {
+            alert(JSON.stringify(err));
+        }
+    });
+};
+
+// 登录
+function showLogin() {
+    alibaichuan.showLogin(function(ret, err) {
+        if (ret) {
+            alert("登录success:" + JSON.stringify(ret));
+        } else {
+            alert("登录error:" + JSON.stringify(ret));
+        }
+    });
+}
+
+//getUserInfo
+function getUserInfo() {
+    alibaichuan.getUserInfo(function(ret, err) {
+        if (ret) {
+            alert("用户信息 ret - " + JSON.stringify(ret));
+        } else {
+            alert("用户信息 err - " + JSON.stringify(err));
+        }
+    });
+}
+
+//getUserInfo
+function logout() {
+    alibaichuan.logout(function(ret, err) {
+        if (ret) {
+            alert("ret - " + JSON.stringify(ret));
+        } else {
+            alert("err - " + JSON.stringify(err));
+        }
+    });
+}
+
+//openMyCart
+function openMyCart() {
+    var param = {
+        isvcode: "feelinglife"
+    };
+    alibaichuan.openMyCart(param, function(ret, err) {
+        if (ret) {
+            alert("ret - " + JSON.stringify(ret));
+        } else {
+            alert("err - " + JSON.stringify(err));
+        }
+    });
+}
+
+//myOrdersPage
+function myOrdersPage() {
+    var param = {
+        isvcode: "feelinglife"
+    };
+	alibaichuan.myOrdersPage(function(ret, err) {
+	    if (ret) {
+	        alert("ret - " + JSON.stringify(ret));
+	    } else {
+	        alert("err - " + JSON.stringify(err));
+	    }
+	});
+}
+
+//通过Itemsid打开
+function showTaokeItemById(){
+	var param = {
+	    isvcode : "feelinglife",
+	    itemid : "527658581269", //或openid:AAHd5d-HAAeGwJedwSnHktBI
+	    mmpid : "mm_112712463_0_0"
+	};
+	alibaichuan.showTaokeItemById(param, function(ret, err) {
+	    if (ret) {
+	        alert("ret - " + JSON.stringify(ret));
+	    } else {
+	        alert("err - " + JSON.stringify(err));
+	    }
+	});
+}
+
+function showTaokeItemById_Openid(){
+	alert("AAH0skp1ACK6aMIHiZPzwFS3");
+	var param = {
+	    isvcode : "feelinglife",
+	    itemid : "AAH0skp1ACK6aMIHiZPzwFS3", //或openid:AAHd5d-HAAeGwJedwSnHktBI
+	    mmpid : "mm_112712463_0_0"
+	};
+	alibaichuan.showTaokeItemById(param, function(ret, err) {
+	    if (ret) {
+	        alert("ret - " + JSON.stringify(ret));
+	    } else {
+	        alert("err - " + JSON.stringify(err));
+	    }
+	});
+}
+
+//通过openid打开
+function showTaokeItemByOpenId(){
+	var param = {
+	    openid : "AAH0skp1ACK6aMIHiZPzwFS3",
+	    mmpid : "mm_112712463_0_0"
+	};
+	alibaichuan.showTaokeItemByOpenId(param, function(ret, err) {
+	    if (ret) {
+	        alert("ret - " + JSON.stringify(ret));
+	    } else {
+	        alert("err - " + JSON.stringify(err));
+	    }
+	});
+}
+
+// 通过openid打开
+function showDetailByURL() {
+	var param = {
+	    url : "https://detail.tmall.com/item.htm?id=528887107325",
+	    mmpid : "mm_112712463_0_0"
+	};
+	alibaichuan.showDetailByURL(param, function(ret, err) {
+	    if (ret) {
+	        alert(JSON.stringify(ret));
+	    } else {
+	        alert(JSON.stringify(err));
+	    }
+	});
+}
+</script>
+
+</html>

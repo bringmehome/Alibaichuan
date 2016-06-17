@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget id="A6915017700374" version="0.0.1"> 
-  <name>SinsAli</name>  
-  <description/>  
-  <author email="sin@feeling.life" href="http://www.apicloud.com">Sin</author>  
+<widget id="A6910687039486" version="0.0.1"> 
+  <name>单独测试百川</name>  
+  <description>阿里百川测试</description>  
+  <author email="123456@qq.com" href="http://www.apicloud.com">庆科</author>  
   <content src="index.html"/>  
   <preference name="pageBounce" value="false"/>  
   <preference name="appBackground" value="rgba(0,0,0,0.0)"/>  
@@ -26,7 +26,7 @@
   <permission name="bootCompleted"/>  
   <permission name="hardware"/>  
   <access origin="*"/>  
-  <feature name="alibaichuan">
-    <param name="urlScheme" value="tbopen23277247"/>
-  </feature> 
+  <feature name="alibaichuan"> 
+    <param name="urlScheme" value="tbopen23255704"/> 
+  </feature--> 
 </widget>
