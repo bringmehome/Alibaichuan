@@ -200,7 +200,7 @@ android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版�
 
 ![](./img/07.png)
 
-2、此时再回来查看证书权限管理[http://my.open.taobao.com/](http://my.open.taobao.com/)，是不是已经有了，这个id在调用[showTaokeItemById接口](http://docs.apicloud.com/%E7%AB%AFAPI/%E5%BC%80%E6%94%BESDK/alibaichuan#6)的时候需要用到
+2、此时再回来[查看证书权限管理](http://console.baichuan.taobao.com/applications.htm)，是不是已经有了，这个id在调用[showTaokeItemById接口](http://docs.apicloud.com/%E7%AB%AFAPI/%E5%BC%80%E6%94%BESDK/alibaichuan#showTaokeItemById)的时候需要用到
 
 ![](./img/huoqmmid.jpg)
 
