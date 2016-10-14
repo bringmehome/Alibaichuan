@@ -202,7 +202,9 @@ android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版�
 
 2、此时再回来查看证书权限管理[http://my.open.taobao.com/](http://my.open.taobao.com/)，是不是已经有了，这个id在调用[showTaokeItemById接口](http://docs.apicloud.com/%E7%AB%AFAPI/%E5%BC%80%E6%94%BESDK/alibaichuan#6)的时候需要用到
 
-![](./img/08.png)
+![](./img/huoqmmid.jpg)
+
+![](./img/mmid.jpg)
 
 <div id="加入淘宝联盟"></div>
 
