@@ -109,15 +109,17 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 ```js
 function showTaokeItemById() {
 	var param = {
-		itemid : "38922866272",
-		mmpid : "mm_114019109_0_0"
+	    isvcode : "feeling",
+	    itemid : "537687037290",
+	    mmpid : "mm_112712463_0_0",
+	    nativeview: true //仅支持android版
 	};
 	alibaichuan.showTaokeItemById(param, function(ret, err) {
-		if (ret) {
-			console.log(JSON.stringify(ret));
-		} else {
-			console.log(JSON.stringify(err));
-		}
+	    if (ret) {
+	        alert("ret - " + JSON.stringify(ret));
+	    } else {
+	        alert("err - " + JSON.stringify(err));
+	    }
 	});
 }
 ```
@@ -160,23 +162,17 @@ function showTaokeItemById() {
 
 ![](./img/02.png)
 
-3、生成SDK包，按照以下三个步骤
+3、获取安全图片 yw_1222.jpg
 
-![](./img/04.png)
+![](./img/yw1222.jpg)
 
-选择以下组件,能选的都选了吧，万一以后要用到
+下载安全图片
 
-![](./img/05.png)
+![](./img/dowlyw.jpg)
 
-成功后如下图所示
-
-![](./img/06.png)
-
-从中获取的SDK，解压后得到安全图片 yw_1222.jpg，替换Custom Module模块中zip包里的安全图片[Custom Module](https://github.com/bringmehome/Alibaichuan/tree/master/Custom%20Module)
+替换Custom Module模块中zip包里的安全图片[Custom Module](https://github.com/bringmehome/Alibaichuan/tree/master/Custom%20Module)
 
 android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版本替换target目录下的文件
-
-![](./img/yw12222.png)
 
 ![](./img/thyw1222.png)
 
@@ -185,7 +181,7 @@ android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版�
 ![](./img/yasuokey.png)
 
 
->其他问题请联系作者邮箱(sin@feeling.life)
+>其他问题请联系作者邮箱(88635653@qq.com)
 
 
 <div id="开发者入驻"></div>
