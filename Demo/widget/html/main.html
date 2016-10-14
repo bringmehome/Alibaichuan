@@ -12,6 +12,7 @@
         margin: 10px;
         font-size: 24px;
     }
+    
     ul {
         margin-bottom: 10px;
     }
@@ -22,20 +23,23 @@
         color: #000;
         word-wrap: break-word;
     }
+    div{
+        padding-left: 10px;
+    }
     </style>
 </head>
 
 <body>
-    <label id="con">Hello APP</label>
-    <div onclick="showLogin()">showLogin</div>
-    <br><div onclick="getUserInfo()">getUserInfo</div>
-    <br><div onclick="logout()">logout</div>
-    <br><div onclick="openMyCart()">openMyCart</div>
-    <br><div onclick="myOrdersPage()">myOrdersPage</div>
-    <br><div onclick="showTaokeItemById()">showTaokeItemById</div>
-    <br><div onclick="showTaokeItemById_Openid()">showTaokeItemById_Openid</div>
-    <br><div onclick="showTaokeItemByOpenId()">showTaokeItemByOpenId</div>
-    <br><div onclick="showDetailByURL()">showDetailByURL</div>
+    <label id="con">接口测试</label>
+    <div onclick="showLogin()">(登录)showLogin</div>
+    <br><div onclick="getUserInfo()">(获取用户信息)getUserInfo</div>
+    <br><div onclick="logout()">(退出登录)logout</div>
+    <br><div onclick="openMyCart()">(打开购物车)openMyCart</div>
+    <br><div onclick="myOrdersPage()">(打开订单)myOrdersPage</div>
+    <br><div onclick="showTaokeItemById()">(通过itemID打开宝贝)showTaokeItemById</div>
+    <br><div onclick="showTaokeItemById_Openid()">(通过Oeniid打开宝贝)showTaokeItemById_Openid</div>
+    <br><div onclick="showDetailByURL()">(通过URL打开宝贝)showDetailByURL</div>
+    <br><div onclick="showMyCardCouponsPage()">(打开我的卡券包)showMyCardCouponsPage</div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
@@ -43,7 +47,7 @@ var alibaichuan;
 apiready = function() {
     alibaichuan = api.require('alibaichuan');
     var param = {
-        isvcode: "buyhezi"
+        isvcode: "feeling"
     };
     alibaichuan.initTaeSDK(param, function(ret, err) {
         if (ret) {
@@ -90,7 +94,7 @@ function logout() {
 //openMyCart
 function openMyCart() {
     var param = {
-        isvcode: "feelinglife"
+        isvcode: "feeling"
     };
     alibaichuan.openMyCart(param, function(ret, err) {
         if (ret) {
@@ -104,9 +108,10 @@ function openMyCart() {
 //myOrdersPage
 function myOrdersPage() {
     var param = {
-        isvcode: "feelinglife"
+        status: 0,
+        isAllOrder:true
     };
-	alibaichuan.myOrdersPage(function(ret, err) {
+	alibaichuan.myOrdersPage(param, function(ret, err) {
 	    if (ret) {
 	        alert("ret - " + JSON.stringify(ret));
 	    } else {
@@ -118,9 +123,10 @@ function myOrdersPage() {
 //通过Itemsid打开
 function showTaokeItemById(){
 	var param = {
-	    isvcode : "feelinglife",
-	    itemid : "527658581269", //或openid:AAHd5d-HAAeGwJedwSnHktBI
-	    mmpid : "mm_112712463_0_0"
+	    isvcode : "feeling",
+	    itemid : "537687037290", //或openid:AAEsXyhFACIB6LoMMaYjZqhF
+	    mmpid : "mm_112712463_0_0",
+	    nativeview: true
 	};
 	alibaichuan.showTaokeItemById(param, function(ret, err) {
 	    if (ret) {
@@ -132,11 +138,10 @@ function showTaokeItemById(){
 }
 
 function showTaokeItemById_Openid(){
-	alert("AAH0skp1ACK6aMIHiZPzwFS3");
 	var param = {
-	    isvcode : "feelinglife",
-	    itemid : "AAH0skp1ACK6aMIHiZPzwFS3", //或openid:AAHd5d-HAAeGwJedwSnHktBI
-	    mmpid : "mm_112712463_0_0"
+	    isvcode : "feeling",
+	    itemid : "AAEsXyhFACIB6LoMMaYjZqhF", 
+	    mmpid : "mm_112712463_0_0",
 	};
 	alibaichuan.showTaokeItemById(param, function(ret, err) {
 	    if (ret) {
@@ -147,28 +152,24 @@ function showTaokeItemById_Openid(){
 	});
 }
 
-//通过openid打开
-function showTaokeItemByOpenId(){
-	var param = {
-	    openid : "AAH0skp1ACK6aMIHiZPzwFS3",
-	    mmpid : "mm_112712463_0_0"
-	};
-	alibaichuan.showTaokeItemByOpenId(param, function(ret, err) {
-	    if (ret) {
-	        alert("ret - " + JSON.stringify(ret));
-	    } else {
-	        alert("err - " + JSON.stringify(err));
-	    }
-	});
-}
-
 // 通过openid打开
 function showDetailByURL() {
-	var param = {
-	    url : "https://detail.tmall.com/item.htm?id=528887107325",
-	    mmpid : "mm_112712463_0_0"
-	};
-	alibaichuan.showDetailByURL(param, function(ret, err) {
+    var param = {
+        url : "https://item.taobao.com/item.htm?id=537687037290",
+        mmpid : "mm_112712463_0_0"
+    };
+    alibaichuan.showDetailByURL(param, function(ret, err) {
+        if (ret) {
+            alert(JSON.stringify(ret));
+        } else {
+            alert(JSON.stringify(err));
+        }
+    });
+}
+
+// 打开卡券包
+function showMyCardCouponsPage() {
+	alibaichuan.showMyCardCouponsPage(function(ret, err) {
 	    if (ret) {
 	        alert(JSON.stringify(ret));
 	    } else {

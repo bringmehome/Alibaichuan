@@ -46,20 +46,22 @@
 <body>
     <div id="wrap">
         <div id="header">
-            <h1>APICloud</h1>
+            <h1>白盒子</h1>
         </div>
         <div id="main">
                 
         </div>
         <div id="footer">
-            <h5>Copyright &copy;<span id="year"></span> </h5>
+            <h5>生活艺术化 艺术生活化</h5>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="./script/api.js"></script>
 <script type="text/javascript">
     apiready = function(){
-		console.log("Hello APICloud");
+        // var chromeDebug = api.require('chromeDebug');
+        // chromeDebug.openDebug(function(ret, err) {
+        // });
 
         var header = $api.byId('header');
         //适配iOS 7+，Android 4.4+状态栏
@@ -79,10 +81,6 @@
                 h: mainPos.h
             }
         });
-
-        var year = $api.byId('year');
-        year.innerHTML = new Date().getFullYear();
-
     };
 </script>
 </html>

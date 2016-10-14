@@ -3,7 +3,7 @@
 <widget id="A6910687039486" version="0.0.1"> 
   <name>单独测试百川</name>  
   <description>阿里百川测试</description>  
-  <author email="123456@qq.com" href="http://www.apicloud.com">庆科</author>  
+  <author email="88635653@qq.com" href="http://www.apicloud.com">sin</author>  
   <content src="index.html"/>  
   <preference name="pageBounce" value="false"/>  
   <preference name="appBackground" value="rgba(0,0,0,0.0)"/>  
@@ -15,7 +15,7 @@
   <preference name="fullScreen" value="false"/>  
   <preference name="autoUpdate" value="true"/>  
   <preference name="smartUpdate" value="false"/>  
-  <preference name="debug" value="true"/>  
+  <preference name="debug" value="false"/>  
   <preference name="statusBarAppearance" value="true"/>  
   <permission name="readPhoneState"/>  
   <permission name="camera"/>  
@@ -28,5 +28,5 @@
   <access origin="*"/>  
   <feature name="alibaichuan"> 
     <param name="urlScheme" value="tbopen23255704"/> 
-  </feature--> 
+  </feature> 
 </widget>
