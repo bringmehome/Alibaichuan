@@ -13,7 +13,6 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 >指南目录
 
-
 * [绑定依赖的模块](#bindyilai)
 
 * [开始开发](#开始开发)
@@ -28,16 +27,7 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ##**概述**
 
-这很重要！！
-
-测试时候请务必使用默认证书，
-
-测试时候请务必使用默认证书，
-
-测试时候请务必使用默认证书，
-
-打包也打测试版而不能使用正式版，否则会报签名不一致的错误
-
+首先建议使用自己的证书，包括安卓和iOS的
 
 <div id="bindyilai"></div>
 
@@ -47,19 +37,45 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
 
 ![](./img/zs.jpg)
 
-1. 如果没有，那么你可以直接下载自定义模块(androidkey.zip, iOSkey.zip), 添加到自定义模块中，调用接口进行测试，打APK包的时候选择测试版
+1. 先自己生成证书
 
-2. 如果已经生成了证书，那么请看[打正式包](#打正式包), 如果没有，继续往下看
+2. 如果已经生成了证书，那么请看[打正式包](#打正式包),
 
-3、先下载阿里百川的的git压缩包，里面包含自定义模块(Alibaichuan-master.zip\Alibaichuan-master\Custom Module),
+<div id="打正式包"></div>
 
-![](./img/xzwiki.png)
+#**打正式包**
 
-4、上传自定义模块，**iOS版本自定义loader和云端打包使用的key模块不一样哦**
+打正式包之前需要先[入驻阿里](#开发者入驻)，加入[淘宝联盟](#加入淘宝联盟)，并得到[阿里妈妈的pid](#阿里妈妈淘客)
 
-**iOS开发-->很重要：** alibaichuan的模块不变，安全图片的模块分两个:云编译时候用：commonkey.zip,   自定义loader时候用：aliloaderkey.zip, 不能全部勾选，得单独勾选。
+>然后继续
 
-**android开发** alibaichuan的模块不变，安全图片的模块用：commonkey.zip, 云打包和自定义模块都用这个。
+1、将正式工程添加android证书，并引入百川模块
+
+![](./img/01.png)
+
+2、生成APP，点击下载，到本地
+
+![](./img/02.png)
+
+3、获取安全图片 yw_1222.jpg
+
+![](./img/yw1222.jpg)
+
+下载安全图片
+
+![](./img/dowlyw.jpg)
+
+替换Custom Module模块中zip包里的安全图片[Custom Module](https://github.com/bringmehome/Alibaichuan/tree/master/Custom%20Module)
+
+android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版本替换target目录下的文件
+
+![](./img/thyw1222.png)
+
+重新压缩自定义模块，直接在commonkey文件夹上点击压缩,并上传到自定义模块
+
+![](./img/yasuokey.png)
+
+4、上传自定义模块，**iOS和android两个zip包**
 
 ![](./img/sczdy.png)
 
@@ -88,7 +104,6 @@ APICloud平台使用阿里百川的教程，包含入驻阿里百川，以及注
     <param name="urlScheme" value="tbopen23277247"/>
   </feature>
 ```
-
 
 3、测试登录
 
@@ -144,41 +159,6 @@ function showTaokeItemById() {
 <br/>
 <br/>
 
-以上都是测试时候用到的，需要打正式版本包的时候继续往下看。
-
-<div id="打正式包"></div>
-
-#**打正式包**
-
-打正式包之前需要先[入驻阿里](#开发者入驻)，加入[淘宝联盟](#加入淘宝联盟)，并得到[阿里妈妈的pid](#阿里妈妈淘客)
-
->然后继续
-
-1、将正式工程添加android证书，并引入百川模块
-
-![](./img/01.png)
-
-2、生成APP，点击下载，到本地
-
-![](./img/02.png)
-
-3、获取安全图片 yw_1222.jpg
-
-![](./img/yw1222.jpg)
-
-下载安全图片
-
-![](./img/dowlyw.jpg)
-
-替换Custom Module模块中zip包里的安全图片[Custom Module](https://github.com/bringmehome/Alibaichuan/tree/master/Custom%20Module)
-
-android版本的替换如下(替换res/drawable文件夹下的图片)，iOS版本替换target目录下的文件
-
-![](./img/thyw1222.png)
-
-重新压缩自定义模块，直接在commonkey文件夹上点击压缩,并上传到自定义模块
-
-![](./img/yasuokey.png)
 
 
 >其他问题请联系作者邮箱(88635653@qq.com)

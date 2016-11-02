@@ -36,10 +36,11 @@
     <br><div onclick="logout()">(退出登录)logout</div>
     <br><div onclick="openMyCart()">(打开购物车)openMyCart</div>
     <br><div onclick="myOrdersPage()">(打开订单)myOrdersPage</div>
-    <br><div onclick="showTaokeItemById()">(通过itemID打开宝贝)showTaokeItemById</div>
+    <br><div onclick="showTaokeItemById()">(通过ID打开宝贝)showTaokeItemById</div>
     <br><div onclick="showTaokeItemById_Openid()">(通过Oeniid打开宝贝)showTaokeItemById_Openid</div>
     <br><div onclick="showDetailByURL()">(通过URL打开宝贝)showDetailByURL</div>
-    <br><div onclick="showMyCardCouponsPage()">(打开我的卡券包)showMyCardCouponsPage</div>
+    <br><div onclick="openShopPage()">(打开店铺)openShopPage</div>
+    <br><div onclick="addToCartPage()">(添加进购物车)addToCartPage</div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
@@ -94,7 +95,8 @@ function logout() {
 //openMyCart
 function openMyCart() {
     var param = {
-        isvcode: "feeling"
+        isvcode: "feeling",
+        nativeview:false
     };
     alibaichuan.openMyCart(param, function(ret, err) {
         if (ret) {
@@ -108,55 +110,57 @@ function openMyCart() {
 //myOrdersPage
 function myOrdersPage() {
     var param = {
-        status: 0,
-        isAllOrder:true
+        status: 2,
+        isAllOrder:true,
+        nativeview:true
     };
-	alibaichuan.myOrdersPage(param, function(ret, err) {
-	    if (ret) {
-	        alert("ret - " + JSON.stringify(ret));
-	    } else {
-	        alert("err - " + JSON.stringify(err));
-	    }
-	});
+    alibaichuan.myOrdersPage(param, function(ret, err) {
+        if (ret) {
+            alert("ret - " + JSON.stringify(ret));
+        } else {
+            alert("err - " + JSON.stringify(err));
+        }
+    });
 }
 
 //通过Itemsid打开
 function showTaokeItemById(){
-	var param = {
-	    isvcode : "feeling",
-	    itemid : "537687037290", //或openid:AAEsXyhFACIB6LoMMaYjZqhF
-	    mmpid : "mm_112712463_0_0",
-	    nativeview: true
-	};
-	alibaichuan.showTaokeItemById(param, function(ret, err) {
-	    if (ret) {
-	        alert("ret - " + JSON.stringify(ret));
-	    } else {
-	        alert("err - " + JSON.stringify(err));
-	    }
-	});
+    var param = {
+        isvcode : "feeling",
+        itemid : "537687037290", //或openid:AAHyOaTIADoqwaqgX6Kr_lTS
+        mmpid : "mm_119457865_0_0",
+        nativeview: true
+    };
+    alibaichuan.showTaokeItemById(param, function(ret, err) {
+        if (ret) {
+            alert("ret - " + JSON.stringify(ret));
+        } else {
+            alert("err - " + JSON.stringify(err));
+        }
+    });
 }
 
 function showTaokeItemById_Openid(){
-	var param = {
-	    isvcode : "feeling",
-	    itemid : "AAEsXyhFACIB6LoMMaYjZqhF", 
-	    mmpid : "mm_112712463_0_0",
-	};
-	alibaichuan.showTaokeItemById(param, function(ret, err) {
-	    if (ret) {
-	        alert("ret - " + JSON.stringify(ret));
-	    } else {
-	        alert("err - " + JSON.stringify(err));
-	    }
-	});
+    var param = {
+        isvcode : "feeling",
+        itemid : "AAHyOaTIADoqwaqgX6Kr_lTS", 
+        mmpid : "mm_119457865_0_0",
+    };
+    alibaichuan.showTaokeItemById(param, function(ret, err) {
+        if (ret) {
+            alert("ret - " + JSON.stringify(ret));
+        } else {
+            alert("err - " + JSON.stringify(err));
+        }
+    });
 }
 
 // 通过openid打开
 function showDetailByURL() {
     var param = {
-        url : "https://item.taobao.com/item.htm?id=537687037290",
-        mmpid : "mm_112712463_0_0"
+        url : "http://h5.m.taobao.com/ump/coupon/detail/index.html?sellerId=2081981169&activityId=8314c70c51674cff90a7a010ae7d4274",
+        mmpid : "mm_119457865_0_0",
+        nativeview:true
     };
     alibaichuan.showDetailByURL(param, function(ret, err) {
         if (ret) {
@@ -167,15 +171,34 @@ function showDetailByURL() {
     });
 }
 
-// 打开卡券包
-function showMyCardCouponsPage() {
-	alibaichuan.showMyCardCouponsPage(function(ret, err) {
-	    if (ret) {
-	        alert(JSON.stringify(ret));
-	    } else {
-	        alert(JSON.stringify(err));
-	    }
-	});
+// 打开商铺
+function openShopPage() {
+    var param = {
+        shopid : "64185146",
+        nativeview:false
+    };
+    alibaichuan.openShopPage(param, function(ret, err) {
+        if (ret) {
+            alert(JSON.stringify(ret));
+        } else {
+            alert(JSON.stringify(err));
+        }
+    });
+}
+
+// 添加进购物车
+function addToCartPage() {
+    var param = {
+        itemid : "540384005662"
+        // itemid : "AAHyOaTIADoqwaqgX6Kr_lTS"
+    };
+    alibaichuan.addToCartPage(param, function(ret, err) {
+        if (ret) {
+            alert(JSON.stringify(ret));
+        } else {
+            alert(JSON.stringify(err));
+        }
+    });
 }
 </script>
 
